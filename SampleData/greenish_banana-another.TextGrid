@@ -1,0 +1,194 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 1.5132426303854876 
+tiers? <exists> 
+size = 6 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "Words" 
+        xmin = 0 
+        xmax = 1.5132426303854876 
+        intervals: size = 5 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.1194605902070996 
+            text = "" 
+        intervals [2]:
+            xmin = 0.1194605902070996 
+            xmax = 0.4718754601781289 
+            text = "another" 
+        intervals [3]:
+            xmin = 0.4718754601781289 
+            xmax = 0.8323302131142767 
+            text = "greenish" 
+        intervals [4]:
+            xmin = 0.8323302131142767 
+            xmax = 1.2932835031144063 
+            text = "banana" 
+        intervals [5]:
+            xmin = 1.2932835031144063 
+            xmax = 1.5132426303854876 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "Phones" 
+        xmin = 0 
+        xmax = 1.5132426303854876 
+        intervals: size = 19 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.1194605902070996 
+            text = "" 
+        intervals [2]:
+            xmin = 0.1194605902070996 
+            xmax = 0.1864596149164208 
+            text = "ə" 
+        intervals [3]:
+            xmin = 0.1864596149164208 
+            xmax = 0.23603889320131843 
+            text = "n" 
+        intervals [4]:
+            xmin = 0.23603889320131843 
+            xmax = 0.33519744977111376 
+            text = "ʌ" 
+        intervals [5]:
+            xmin = 0.33519744977111376 
+            xmax = 0.39147663052694354 
+            text = "ð" 
+        intervals [6]:
+            xmin = 0.39147663052694354 
+            xmax = 0.4718754601781289 
+            text = "ɚ" 
+        intervals [7]:
+            xmin = 0.4718754601781289 
+            xmax = 0.5509343093351279 
+            text = "g" 
+        intervals [8]:
+            xmin = 0.5509343093351279 
+            xmax = 0.6085534705851441 
+            text = "ɹ" 
+        intervals [9]:
+            xmin = 0.6085534705851441 
+            xmax = 0.662152690352601 
+            text = "i" 
+        intervals [10]:
+            xmin = 0.662152690352601 
+            xmax = 0.6996721441898208 
+            text = "n" 
+        intervals [11]:
+            xmin = 0.6996721441898208 
+            xmax = 0.7572913054398369 
+            text = "ɪ" 
+        intervals [12]:
+            xmin = 0.7572913054398369 
+            xmax = 0.8323302131142767 
+            text = "ʃ" 
+        intervals [13]:
+            xmin = 0.8323302131142767 
+            xmax = 0.9113890622712756 
+            text = "b" 
+        intervals [14]:
+            xmin = 0.9113890622712756 
+            xmax = 0.931488769684072 
+            text = "ə" 
+        intervals [15]:
+            xmin = 0.931488769684072 
+            xmax = 0.9810680479689696 
+            text = "n" 
+        intervals [16]:
+            xmin = 0.9810680479689696 
+            xmax = 1.1244459608469168 
+            text = "æ" 
+        intervals [17]:
+            xmin = 1.1244459608469168 
+            xmax = 1.1713452781434417 
+            text = "n" 
+        intervals [18]:
+            xmin = 1.1713452781434417 
+            xmax = 1.2932835031144063 
+            text = "ə" 
+        intervals [19]:
+            xmin = 1.2932835031144063 
+            xmax = 1.5132426303854876 
+            text = "" 
+    item [3]:
+        class = "TextTier" 
+        name = "PrStr" 
+        xmin = 0 
+        xmax = 1.5132426303854876 
+        points: size = 2 
+        points [1]:
+            number = 0.28427819099202967 
+            mark = "*" 
+        points [2]:
+            number = 1.2932835031144063 
+            mark = "]" 
+    item [4]:
+        class = "TextTier" 
+        name = "Points" 
+        xmin = 0 
+        xmax = 1.5132426303854876 
+        points: size = 6 
+        points [1]:
+            number = 0.13822031712570954 
+            mark = "0" 
+        points [2]:
+            number = 0.22933899073038633 
+            mark = "*>" 
+        points [3]:
+            number = 0.32447760581762236 
+            mark = "*<" 
+        points [4]:
+            number = 0.39281661102112997 
+            mark = "*<" 
+        points [5]:
+            number = 0.5268146604397722 
+            mark = "]>" 
+        points [6]:
+            number = 1.2772037371841691 
+            mark = "]>" 
+    item [5]:
+        class = "TextTier" 
+        name = "Levels" 
+        xmin = 0 
+        xmax = 1.5132426303854876 
+        points: size = 6 
+        points [1]:
+            number = 0.13822031712570954 
+            mark = "3" 
+        points [2]:
+            number = 0.22933899073038633 
+            mark = "2" 
+        points [3]:
+            number = 0.32447760581762236 
+            mark = "5" 
+        points [4]:
+            number = 0.39281661102112997 
+            mark = "5" 
+        points [5]:
+            number = 0.5268146604397722 
+            mark = "2" 
+        points [6]:
+            number = 1.2772037371841691 
+            mark = "1" 
+    item [6]:
+        class = "IntervalTier" 
+        name = "Ranges" 
+        xmin = 0 
+        xmax = 1.5132426303854876 
+        intervals: size = 3 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.01734514820396553 
+            text = "" 
+        intervals [2]:
+            xmin = 0.01734514820396553 
+            xmax = 1.4909566222517725 
+            text = "85-225" 
+        intervals [3]:
+            xmin = 1.4909566222517725 
+            xmax = 1.5132426303854876 
+            text = "" 

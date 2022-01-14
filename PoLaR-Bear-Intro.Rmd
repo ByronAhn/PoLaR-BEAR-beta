@@ -1,0 +1,76 @@
+---
+title: "PoLaR-*BEAR*"
+subtitle: "PoLaR-*B*ased *E*xtraction and *A*nalysis in *R*"
+bibliography: "polar-bear.bib"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(formattable)
+library(readr)
+source("PoLaR-BEAR.R")
+WorkingDirectoryFullPath <- paste0(getwd(),"/SampleData")
+```
+
+<div style="color:red">
+### Developer Notes for now (as of 6 Jan '22)…
+#### To do list:
+* priority: comment up code
+  + indicate the purpose / argument / outputs of each function
+  + clarify what rPraat and PraatR are each doing in the scripts
+* add: using output of extract-info from PoLaR Praat plugin
+* make sure there are CSVs per…
+  + …pitch accent (pseudo label)
+    * especially including slopes:
+      + slopes domain = find the higest F0, and the lowest F0 preceding it
+      + overall rise = calculate slope of lowest to highest that define the domain
+      + steepest rise = calculate slopes between neighbor points, and use the highest value; submit both values to analysis
+  + …range
+    * (get NMV's python code - translating to R)
+  + …utterance
+    * (get lots of info based on BTA's earlier code)
+</div>
+
+# Using PoLaR-BEAR
+
+## Preparing Your R File
+
+When doing work with PoLaR-BEAR, you must start by loading up the `PoLaR-BEAR.R` file, which allows us to call PoLaR-specific functions. Place the `PoLaR-BEAR.R` file in the same directory as your .R/.Rmd file, and then include the following line of code early in your document:
+```{r, eval=FALSE}
+source("PoLaR-BEAR.R")
+```
+Not only does this import the PoLAR-specific functions, but this calls up many of the necessary libraries for the analysis, including: `tidyverse`, `dygraphs`, [`PraatR`](http://www.aaronalbin.com/praatr/index.html), and [`rPraat`](https://github.com/bbTomas/rPraat/).
+
+Next, you must set the working directory, which should contain all the .wav/.TextGrid files that you intend to process.^[**NOTE:** When you collecting all your files, they must have **_exactly_** the same name; i.e., XXX.wav and XXX.TextGrid, and **_not_** something like XXX.wav and XXX-y.TextGrid.] To set the working directory, add a line of code modelled after the one below, which sets the variable `WorkingDirectoryFullPath`:
+```{r, eval=FALSE}
+WorkingDirectoryFullPath <- "/Users/polaruser/Documents/PoLaR-data/"
+```
+Alternatively, you could set the variable relative to the current working directory (*by default, this is the same directory as the .R/.Rmd file*). For example, if you wanted to set the working directory to be a folder called `SampleData` inside of the working directory, you could use a line of code like `WorkingDirectoryFullPath <- paste0(getwd(),"/SampleData/")`.
+
+## Using PoLaR-BEAR Functions
+
+### Create a .csv with information organized by Points labels
+To create a .csv files with general info about the Points labels, and their relationships to Levels, Ranges, Words, and Phones tiers, use the following line of code:
+```{r, eval=FALSE}
+pointslevelsrangesLooper()
+```
+When this runs successfully, the R console informs the user that it is complete and where the .csv is located:
+```{r, echo=FALSE}
+pointslevelsrangesLooper()
+pointslevelsrangesOUTPUT <- read.csv(file.path(WorkingDirectoryFullPath, "PoLaR-BEAR-output", "PointsLevelsRanges.csv"))
+```
+The first six rwows of the .csv that is output by this function for the data in the `SampleData` folder (included alongside this .Rmd file) is given below:
+```{r echo=FALSE}
+formattable(head(pointslevelsrangesOUTPUT), align=c('l','c','c','c','c','c','c','c','c','c','c','c','c','c','c'))
+```
+
+Some notes on this function:
+
+  * This `pointslevelsrangesLooper()` function loops through all files in the `WorkingDirectoryFullPath`, and outputs a single .csv file called "PointsLevelsRanges.csv".  (*This is fully automated and requires no user interaction.*) 
+    + There must be pairs of .wav/.TextGrid files with the same filename in this directory.
+    + This also requires .PitchTier files, but if they don't exist, it will create them.
+  * By default, the output directory for the `pointslevelsrangesLooper()` function is a subfolder called `PoLaR-BEAR-output` within the `WorkingDirectoryFullPath` directory.
+    + If the user would like to change the location of this file, they can call the `pointslevelsrangesLooper` function with an optional argument, `outputDir`, which points to a directory that is in the subfolder of `WorkingDirectoryFullPath`. Example usage of this variable: `pointslevelsrangesLooper(outputDir = "mySubFolder")`.
