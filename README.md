@@ -7,12 +7,13 @@
     * indicate the purpose / argument / outputs of each function
     * clarify what rPraat and PraatR are each doing in the scripts
   + add: using output of extract-info from PoLaR Praat plugin
+  + work on adding algorithms that deal in pseudo labels / utterance properties (see CSV list below)
 * @Simmons students:
   + Read over existing R code so you can know what functions do what
   + get NMV's python code - translate it into R
-  + **MAKE SURE** that you are not duplicating the functionality of any of the existing R code
+  + **_MAKE SURE_** that you are not duplicating the functionality of any of the existing R code
 
-### Overview:
+### Intended CSV outputs:
 
 * make sure there are CSVs per…
   + …pitch accent (pseudo label)
