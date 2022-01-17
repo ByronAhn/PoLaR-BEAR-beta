@@ -626,16 +626,16 @@ buildPLRdf <- function(TextGrid){
   
   # create a data frame centered on the Points tier info in the TextGrid data create by rPraat:
   PLR <- as.data.frame(TextGrid[[tgPoints]]) %>% 
-    # get rid of some extraneous columns, that come with the rPraat object:
+    # create a column "index" for enumerating the Points:
     mutate(index = row_number(), .before = name) %>% 
     # create a column for the Filename
     mutate(Filename = theName, .before=index) %>%
-    # create a column of levels labels for each point, pulling directly from the Levels tier:
+    # get rid of some extraneous columns, that come with the rPraat object:
     subset(select = -c(name,type)) %>%
-    # create a column "index" for enumerating the Points:
-    mutate(Levels.label = TextGrid[[tgLevels]]$label[index]) %>%
     # rename columns to be more legible:
     rename(Points.label = label, Time=t) %>%
+    # create a column of levels labels for each point, pulling directly from the Levels tier:
+    mutate(Levels.label = TextGrid[[tgLevels]]$label[index]) %>%
     # create a column for the F0 values, as determined by the getF0Here() function, based on the Time and Points.label columns:
     mutate(F0.Hz = purrr::pmap_dbl(list(Time, Points.label), function(t, l) getF0Here(t, l, thePitch)), .after=Time) %>%
     # create a column for the Ranges label, based on the Time column:
